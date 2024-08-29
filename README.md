@@ -15,7 +15,7 @@ function bringAllPlayers()
             local targetCharacter = targetPlayer.Character
             if targetCharacter then
                 -- Move the target player's character to the position
-                targetCharacter:SetPrimaryPartCFrame(CFrame.new(position + Vector3.new(0, 15, -15)))
+                targetCharacter:SetPrimaryPartCFrame(CFrame.new(position + Vector3.new(0, 25, -25)))
             end
         end
     end
@@ -44,7 +44,7 @@ function AttackPlayer()
         if targetPlayera ~= player then
             local targetCharactera = targetPlayera.Character
             if targetCharactera then
-                game:GetService("Players").LocalPlayer.Character:FindFirstChild("Cannon Ball").RemoteEvent:FireServer(CFrame.new(position + Vector3.new(0, 15, -15)) * CFrame.Angles(-0, 0, -0), targetCharactera.HumanoidRootPart)
+                game:GetService("Players").LocalPlayer.Character:FindFirstChild("Cannon Ball").RemoteEvent:FireServer(CFrame.new(position + Vector3.new(0, 25, -25)) * CFrame.Angles(-0, 0, -0), targetCharactera.HumanoidRootPart)
     
             end
         end
