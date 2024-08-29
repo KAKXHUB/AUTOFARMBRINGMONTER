@@ -4,6 +4,9 @@
 local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
 
+game:GetService("Players").LocalPlayer.Character.Weapons:FireServer()
+game:GetService("Players").LocalPlayer.Character.Weapons:FireServer()
+
 function bringAllPlayers()
     -- Get the position of the current player's character
     local position = character.HumanoidRootPart.Position
