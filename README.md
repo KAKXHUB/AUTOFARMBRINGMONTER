@@ -64,15 +64,16 @@ end)
 
 function bringAllMonster()
 
-local player = game.Players.LocalPlayer
-local character = player.Character or player.CharacterAdded:Wait()
-local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
-
-for _, monster in pairs(workspace.Enemies:GetDescendants()) do
-    if monster:IsA("Model") and monster:FindFirstChild("Humanoid") then
-        monster:SetPrimaryPartCFrame(humanoidRootPart.CFrame * CFrame.new(0, 25, -25))
+    local player = game.Players.LocalPlayer
+    local character = player.Character or player.CharacterAdded:Wait()
+    local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+    local position = character.HumanoidRootPart.Position
+    
+    for _, monster in pairs(workspace.Enemies:GetDescendants()) do
+        if monster:IsA("Model") and monster:FindFirstChild("Humanoid") then
+            monster:SetPrimaryPartCFrame(CFrame.new(position + Vector3.new(0, 25, -25)))
+        end
     end
-end
 end
 
 
